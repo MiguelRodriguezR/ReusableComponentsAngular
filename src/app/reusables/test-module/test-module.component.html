@@ -1,0 +1,25 @@
+<div class="top-menu">
+  <select [(ngModel)]="options">
+    <option [value]="''" disabled>Choose an option</option>
+    <option [value]="'animatedText'">Animated Text</option>
+    <option [value]="'other'">other</option>
+  </select>
+</div>
+<div class="test-field">
+  <div *ngIf="options == 'animatedText'" class="animated-text">
+    <div>
+      <app-animated-text [text]="'Texto de prueba'"></app-animated-text>
+      <app-animated-text
+        #secondText
+        [text]="'Otro texto con animacion personalizada'"
+        [animation]="'fade-in-up'"
+        [timeDelay]="120"
+      ></app-animated-text>
+      <app-animated-text [eventStarter]="secondText.endAnimation" [text]="'Texto con evento :D'"></app-animated-text>
+      <app-animated-text
+        [eventStarter]="myOutput"
+        [text]="'Texto con evento de boton'"></app-animated-text>
+      <button (click)="handleClickTextAnimation($event)">click me</button>
+    </div>
+  </div>
+</div>

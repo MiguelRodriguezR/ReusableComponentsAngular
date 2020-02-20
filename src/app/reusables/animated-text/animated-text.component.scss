@@ -1,0 +1,28 @@
+
+
+.text{
+  transition: all 0.5s;
+  display: inline-block;
+}
+
+//INITIAL
+
+.initial-fade-in{
+  opacity: 0;
+}
+
+.initial-fade-in-up{
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+//ANIMATIONS
+
+.fade-in{
+  opacity: 1;
+}
+
+.fade-in-up{
+  opacity: 1;
+  transform: translateY(0px);
+}
